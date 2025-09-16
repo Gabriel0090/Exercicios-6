@@ -1,0 +1,63 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+
+/* Estilo da navbar no tema escuro */
+.themeDark .navbar {
+  box-shadow: var(--shadow);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.navControls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.badge {
+  display:inline-grid;
+  place-items:center;
+  min-width: 22px;
+  height:22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.75rem;
+  margin-left: 6px;
+}
+
+/* Media query para telas menores */
+@media (max-width: 480px) {
+  .navbar {
+    height: 56px;
+    padding: 8px 12px;
+  }
+}

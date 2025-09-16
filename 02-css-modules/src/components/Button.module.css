@@ -1,0 +1,36 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: transparent;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* variants */
+.solid {
+  background: var(--primary);
+  color: #fff;
+}
+
+.outline {
+  background: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--primary);
+  border: none;
+}
