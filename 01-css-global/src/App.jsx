@@ -1,7 +1,7 @@
 import Navbar from "./components/navbar";
 import ProductCard from "./components/productCard";
 import "./App.css";
-import { PRODUCTS } from "../data/products";
+import { PRODUCTS } from "../01-css-global/data/products";
 import { useEffect, useState } from "react";
 
 export default function App() {
