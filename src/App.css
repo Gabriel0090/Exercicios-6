@@ -1,0 +1,122 @@
+/* NAVBAR (fixed) */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+.theme-dark .navbar {
+  background: linear-gradient(180deg, rgba(10,12,15,0.7), rgba(10,12,15,0.6));
+  box-shadow: var(--shadow);
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+}
+
+/* Badge */
+.badge {
+  display:inline-grid;
+  place-items:center;
+  min-width: 22px;
+  height:22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.75rem;
+  margin-left: 6px;
+}
+
+/* NAV controls */
+.nav-controls { display:flex; gap:8px; align-items:center; }
+
+/* Button base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: transparent;
+  font-weight: 600;
+  transition: var(--transition);
+}
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* variants */
+.btn-solid { background: var(--primary); color: #fff; }
+.btn-outline { background: transparent; border-color: var(--primary); color: var(--primary); }
+.btn-ghost { background: transparent; color: var(--primary); border: none; }
+
+/* CARD */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.card:focus { outline: none; } /* we rely on :focus-visible globally */
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-elev); }
+
+/* Image wrapper ensures 1:1 and avoids layout shift */
+.img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(90deg,#f3f4f6,#e5e7eb);
+  display: block;
+}
+
+/* Product body */
+.card-body { padding: 12px; display:flex; flex-direction: column; gap:8px; flex:1; }
+.title {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: var(--text);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}.row { display:flex; line-clamp: 2; align-items:center; justify-content:space-between; gap:8px; }
+.price { font-weight:700; }
+.tag { font-size: 0.75rem; padding: 4px 8px; border-radius: 999px; background: #fef3c7; color:#92400e; }
+
+/* SKELETON (no layout shift thanks to aspect-ratio) */
+.skeleton {
+  width:100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(90deg,#eee,#f6f6f6,#eee);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+@keyframes shimmer { 0% { background-position: 200% 0 } 100% { background-position: -200% 0 } }
+
+/* Buttons inside card */
+.card .actions { margin-top: auto; }
+
+/* Rating stars */
+.stars { color: #f59e0b; font-size: 0.9rem; }
+
+/* small responsive tweaks */
+@media (max-width:480px) {
+  .navbar { height: 56px; padding: 8px 12px; }
+  .container { padding: 0 12px; }
+}
